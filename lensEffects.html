@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<title>Rasterization Based Simulation of Lens Effects</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+	height: 100%;
+	color: #777;
+	line-height: 1.8;
+}
+
+p {
+	text-align: justify;
+}
+	
+.w3-content {
+	font-size: 16px;
+}
+
+td, th {
+  border: 1px solid #888;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+	background-image: url("img/details/lensEffects/distortion/geomD23G9999S2424.png");
+	min-height: 500px;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+	background-image: url("img/pf_materialModels.png");
+	min-height: 400px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+	background-image: url('img/pf_rtxVr.png');
+	min-height: 400px;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+	.bgimg-1, .bgimg-2, .bgimg-3 {
+		background-attachment: scroll;
+		min-height: 400px;
+	}
+}
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+	<div class="w3-bar w3-card w3-white" id="myNavbar">
+		<a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+			<i class="fa fa-bars"></i>
+		</a>
+		<a href="index.html#home"             class="w3-bar-item w3-button"  onclick="toggleFunction()"             style="color:black;">                                                HOME</a>
+		<a href="index.html#about"            class="w3-bar-item w3-button w3-hide-small" style="color:black;"><i class="fa fa-user" style="color:black;"></i> ABOUT</a>
+		<a href="index.html#portfolio"        class="w3-bar-item w3-button w3-hide-small" style="color:black;"><i class="fa fa-th"   style="color:black;"></i> PORTFOLIO</a>
+		<a href="index.html#codingChallenges" class="w3-bar-item w3-button w3-hide-small" style="color:black;"><i class="fa fa-th"   style="color:black;"></i> CODING CHALLENGES</a>
+	</div>
+
+	<!-- Navbar on small screens -->
+	<div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+		<a href="index.html#about"            class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+		<a href="index.html#portfolio"        class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
+		<a href="index.html#codingChallenges" class="w3-bar-item w3-button" onclick="toggleFunction()">CODING CHALLENGES</a>
+	</div>
+</div>
+
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+</div>
+
+
+<!-- Container lens effects -->
+<div class="w3-content w3-padding-64" style="max-width:680px" id="materialModels">
+	<h1>Rasterization Based Simulation of Lens Effects</h1>
+	<p>
+		The topic of my bachelor's thesis was "Rasterization Based Simulation of Lens Effects". The goal was to simulate effects like depth of field, distortion and vignetting in real time. While there are many techniques to approximate each of these effects, it is impractical to combine all of them in a single program. Instead I implemented an older technique introduced in the paper "An Image-Based Model for Realistic Lens Systems in Interactive Computer Graphics" by Heidrich et al. in 1997. This technique is capable of simulating the image formation within a specified lens system and accounts for all the effects mentioned above. Regrettably is too expensive to archive interactive frame rates, even on modern hardware.
+	</p>
+	
+	<h2>Results</h2>
+	<div>
+		<h3>Depth of Field</h3>
+		<div class="w3-row">
+			<div class="w3-col m6" style="padding-right: 8px; padding-bottom: 16px">
+				<img src="img/details/lensEffects/depthOfField/thinS005D38F50R25.png" style="width:100%">
+				<span class="w3-center" style="display: block">5 Samples</span>
+			</div>
+			<div class="w3-col m6" style="padding-left: 8px; padding-bottom: 16px">
+				<img src="img/details/lensEffects/depthOfField/thinS010D38F50R25.png" style="width:100%">
+				<span class="w3-center" style="display: block">10 Samples</span>
+			</div>
+		</div>
+		<div class="w3-row">
+			<div class="w3-col m6" style="padding-right: 8px;">
+				<img src="img/details/lensEffects/depthOfField/thinS025D38F50R25.png" style="width:100%">
+				<span class="w3-center" style="display: block">25 Samples</span>
+			</div>
+			<div class="w3-col m6" style="padding-left: 8px;">
+				<img src="img/details/lensEffects/depthOfField/thinS050D38F50R25.png" style="width:100%">
+				<span class="w3-center" style="display: block">50 Samples</span>
+			</div>
+		<span>
+			<b>Figure 1:</b> Depth of field of a thin lens simulated with different numbers of samples.
+		</span>
+		</div>
+	</div>
+
+	<div class="w3-row w3-padding-32">
+			<div class="w3-col m6" style="padding-right: 8px; padding-bottom: 16px">
+				<img src="img/details/lensEffects/depthOfField/heavyThinS005D40F28R73.png" style="width:100%">
+				<span class="w3-center" style="display: block">5 Samples</span>
+			</div>
+			<div class="w3-col m6" style="padding-left: 8px; padding-bottom: 16px">
+				<img src="img/details/lensEffects/depthOfField/heavyThinS100D40F28R73.png" style="width:100%">
+				<span class="w3-center" style="display: block">100 Samples</span>
+			</div>
+	<span>
+		<b>Figure 2:</b> Depth of field of a thin lens simulated with different numbers of samples.
+	</span>
+	</div>
+	
+	<div class="w3-row w3-padding-16">
+		<h3>Distortion</h3>
+			<div class="w3-col m6" style="padding-right: 8px; padding-bottom: 16px">
+				<img src="img/details/lensEffects/distortion/geomD23G9999S2424.png" style="width:100%">
+				<span class="w3-center" style="display: block">Rasterization</span>
+			</div>
+			<div class="w3-col m6" style="padding-left: 8px; padding-bottom: 16px">
+				<img src="img/details/lensEffects/distortion/pbrtS16.png" style="width:100%">
+				<span class="w3-center" style="display: block">Ray tracing (reference)</span>
+			</div>
+		<span>
+			<b>Figure 3:</b> Simulating a 10mm fisheye lens.
+		</span>
+	</div>
+	
+	<div class="w3-padding-16">
+		<h3>Vignetting</h3>
+		<div class="w3-row">
+			<div class="w3-col m6" style="padding-right: 8px; padding-bottom: 16px">
+				<img src="img/details/lensEffects/vignetting/geomS005D38.png" style="width:100%">
+				<span class="w3-center" style="display: block">5 Samples</span>
+			</div>
+			<div class="w3-col m6" style="padding-left: 8px; padding-bottom: 16px">
+				<img src="img/details/lensEffects/vignetting/geomS010D38.png" style="width:100%">
+				<span class="w3-center" style="display: block">10 Samples</span>
+			</div>
+		</div>
+		<div class="w3-row">
+			<div class="w3-col m6" style="padding-right: 8px;">
+				<img src="img/details/lensEffects/vignetting/geomS025D38.png" style="width:100%">
+				<span class="w3-center" style="display: block">25 Samples</span>
+			</div>
+			<div class="w3-col m6" style="padding-left: 8px;">
+				<img src="img/details/lensEffects/vignetting/geomS100D38.png" style="width:100%">
+				<span class="w3-center" style="display: block">100 Samples</span>
+			</div>
+		<span>
+			<b>Figure 4:</b> Vignetting of a double Gauss lens simulated with different numbers of samples.
+		</span>
+		</div>
+	</div>
+	
+	<div class="w3-padding-16">
+		<h3>Performance</h3>
+		<img src="img/details/lensEffects/performance/performance.png" style="width:100%">
+		<span>
+			<b>Figure 5:</b> Performance of this technique. x-axis: number of samples, y-axis: frames per second
+		</span>
+	</div>
+	
+	
+	<h2>German summary</h2>
+	<p>
+		Für viele Anwendungen, wie zum Beispiel Sensorsimulation, fotorealistisches Rendering und Augmented Reality ist es notwendig, die Eigenschaften eines echten Kamera- und Linsensystems akkurat zu simulieren. Zu diesen Eigenschaften gehören unter anderem Schärfentiefe, Verzeichnung und Vignettierung. Die meisten in der Computergraphik verwendeten Kameramodelle sind jedoch entweder zu einfach, um diese Effekte beschreiben zu können, oder benötigen zu viel Rechenaufwand, um für interaktive Anwendungen nutzbar zu sein.
+	</p>
+	<p>
+		Im Rahmen dieser Arbeit soll untersucht werden, welche Qualität und Geschwindigkeit eine rasterisierungsbasierte Approximation von Linseneffekten auf heutiger Grafikhardware erreichen kann. Dabei sollen Verfahren im Fokus stehen, die alle relevanten Effekte zugleich simulieren, denn es gibt zwar spezialisierte Approximationsverfahren für einzelne Effekte, jedoch lassen sich diese praktisch kaum in einem Programm kombinieren.
+	</p>
+	<p>
+		Als Grundlage dient das Vorgehen, das von Heidrich et al. bereits 1997 in ihrem Paper "An Image-Based Model for Realistic Lens Systems in Interactive Computer Graphics" vorgestellt wurde. Sie hatten damals allerdings mit den Einschränkungen der Grafikhardware zu kämpfen. Dieses Verfahren wird im Rahmen der Arbeit auf heutiger Hardware implementiert und auf Performance und Qualität untersucht.
+	</p>
+</div>
+
+
+
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+	<span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+	<div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+		<img id="img01" class="w3-image">
+		<p id="caption" class="w3-opacity w3-large"></p>
+	</div>
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64 w3-opacity">
+	<a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+	<p class="w3-center">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+ 
+ 
+<script>
+// Modal Image Gallery
+function onClick(element) {
+	document.getElementById("img01").src = element.src;
+	document.getElementById("modal01").style.display = "block";
+	var captionText = document.getElementById("caption");
+	captionText.innerHTML = element.alt;
+}
+
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+		var x = document.getElementById("navDemo");
+		if (x.className.indexOf("w3-show") == -1) {
+				x.className += " w3-show";
+		} else {
+				x.className = x.className.replace(" w3-show", "");
+		}
+}
+</script>
+
+
+</body>
+</html>
