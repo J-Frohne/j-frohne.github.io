@@ -96,7 +96,7 @@ body, html {
 
 		<div class="w3-col m6 w3-padding-large">
 			<p style="text-align: justify;">
-				I'm a software engineer with a master's degree in computer science. In my studies I specialized in visual computing and worked on different projects using C++, OpenGL, Vulkan and GLSL. In my master's thesis I worked on material models for physically based rendering, so I'm well versed within the realm of modern material models currently used in the video game and movie industry.
+				I'm a software engineer with a master's degree in computer science. In my studies I specialized in visual computing and worked on different projects using C++, Vulkan, OpenGL and GLSL. In my master's thesis I worked on material models for physically based rendering, so I'm well versed within the realm of modern material models currently used in the video game and movie industry.
 			</p>
 			<p style="text-align: justify;">
 				More information regarding my master's thesis and my other projects can be found below.
@@ -121,78 +121,6 @@ body, html {
 
 	
 	<div class="w3-row">
-		<div class="w3-col m6">
-			<!-- Shadow Mapping -->
-			<div class="w3-card w3-margin">
-				<img src="img/pf_pointLightShadow.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Shadow Mapping">
-				<div class="w3-container">
-					<h3>Shadow Mapping</h3>
-				
-					<p style="text-align: justify;">
-						This is a recent reimplementation of one of my older university projects. I implemented an omnidirectional shadow map for point lights. The source code of this project can be found on my GitHub page.
-					</p>
-				
-					<b>Concepts:</b>
-					<ul style="margin-block-start: 0px;">
-						<li>Shadow Mapping</li>
-						<li>Shadow Map Bias</li>
-						<li>Percentage Closer Filtering</li>
-					</ul>
-				
-					<b>Technologies:</b>
-					<ul style="margin-block-start: 0px;">
-						<li>C++</li>
-						<li>OpenGL</li>
-						<li>GLSL</li>
-						<li>CMake</li>
-					</ul>
-					
-					<p>
-						<a href="https://github.com/J-Frohne/glPointLightShadow" target="_blank">
-						<button class="w3-button w3-padding w3-border w3-light-grey">
-							<i class="fa fa-github"></i> View on GitHub »
-							
-						</button>
-						</a>
-					</p>
-				</div>
-			</div>
-			<!-- Bachelor's Thesis -->
-			<div class="w3-card w3-margin">
-				<img src="img/pf_lenseEffects.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Rasterization Based Simulation of Lens Effects">
-				<div class="w3-container">
-					<h3>Rasterization Based Simulation of Lens Effects</h3>
-				
-					<p style="text-align: justify;">
-						The topic of my bachelor's thesis was "Rasterization Based Simulation of Lens Effects". The goal was to simulate effects like depth of field, distortion and vignetting in real time. While there are many techniques to approximate each of these effects, it is impractical to combine all of them in a single program. Instead I implemented an older technique introduced in the paper "An Image-Based Model for Realistic Lens Systems in Interactive Computer Graphics" by Heidrich et al. in 1997. This technique is capable of simulating the image formation within a specified lens system and accounts for all the effects mentioned above. Regrettably is too expensive to archive interactive frame rates, even on modern hardware.
-					</p>
-				
-					<b>Concepts:</b>
-					<ul style="margin-block-start: 0px;">
-						<li>Lens effects</li>
-						<li>Camera and lens models</li>
-						<li>Newton's method in multiple dimensions</li>
-					</ul>
-					
-					<b>Technologies:</b>
-					<ul style="margin-block-start: 0px;">
-						<li>C++</li>
-						<li>OpenGL</li>
-						<li>GLSL</li>
-						<li>CMake</li>
-					</ul>
-					
-					<p>
-						<a href="lensEffects.html">
-							<button class="w3-button w3-padding w3-border w3-light-grey">
-								Read More »
-							</button>
-						</a>
-					</p>
-				</div>
-			</div>
-		</div>
-		
 		<div class="w3-col m6">
 			<!-- Master's thesis -->
 			<div class="w3-card w3-margin">
@@ -257,6 +185,80 @@ body, html {
 				</div>
 			</div>
 		</div>
+		
+		
+		<div class="w3-col m6">
+			<!-- Bachelor's Thesis -->
+			<div class="w3-card w3-margin">
+				<img src="img/pf_lenseEffects.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Rasterization Based Simulation of Lens Effects">
+				<div class="w3-container">
+					<h3>Rasterization Based Simulation of Lens Effects</h3>
+				
+					<p style="text-align: justify;">
+						The topic of my bachelor's thesis was "Rasterization Based Simulation of Lens Effects". The goal was to simulate effects like depth of field, distortion and vignetting in real time. While there are many techniques to approximate each of these effects, it is impractical to combine all of them in a single program. Instead I implemented an older technique introduced in the paper "An Image-Based Model for Realistic Lens Systems in Interactive Computer Graphics" by Heidrich et al. in 1997. This technique is capable of simulating the image formation within a specified lens system and accounts for all the effects mentioned above. Regrettably is too expensive to archive interactive frame rates, even on modern hardware.
+					</p>
+				
+					<b>Concepts:</b>
+					<ul style="margin-block-start: 0px;">
+						<li>Lens effects</li>
+						<li>Camera and lens models</li>
+						<li>Newton's method in multiple dimensions</li>
+					</ul>
+					
+					<b>Technologies:</b>
+					<ul style="margin-block-start: 0px;">
+						<li>C++</li>
+						<li>OpenGL</li>
+						<li>GLSL</li>
+						<li>CMake</li>
+					</ul>
+					
+					<p>
+						<a href="lensEffects.html">
+							<button class="w3-button w3-padding w3-border w3-light-grey">
+								Read More »
+							</button>
+						</a>
+					</p>
+				</div>
+			</div>
+			<!-- Shadow Mapping -->
+			<div class="w3-card w3-margin">
+				<img src="img/pf_pointLightShadow.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Shadow Mapping">
+				<div class="w3-container">
+					<h3>Shadow Mapping</h3>
+				
+					<p style="text-align: justify;">
+						This is a reimplementation of one of my older university projects. I implemented an omnidirectional shadow map for point lights. The source code of this project can be found on my GitHub page.
+					</p>
+				
+					<b>Concepts:</b>
+					<ul style="margin-block-start: 0px;">
+						<li>Shadow Mapping</li>
+						<li>Shadow Map Bias</li>
+						<li>Percentage Closer Filtering</li>
+					</ul>
+				
+					<b>Technologies:</b>
+					<ul style="margin-block-start: 0px;">
+						<li>C++</li>
+						<li>OpenGL</li>
+						<li>GLSL</li>
+						<li>CMake</li>
+					</ul>
+					
+					<p>
+						<a href="https://github.com/J-Frohne/glPointLightShadow" target="_blank">
+						<button class="w3-button w3-padding w3-border w3-light-grey">
+							<i class="fa fa-github"></i> View on GitHub »
+							
+						</button>
+						</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		
 	</div>
 </div>
 
