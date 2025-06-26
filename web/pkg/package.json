@@ -1,0 +1,15 @@
+{
+  "name": "hello_triangle",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "hello_triangle_bg.wasm",
+    "hello_triangle.js",
+    "hello_triangle.d.ts"
+  ],
+  "main": "hello_triangle.js",
+  "types": "hello_triangle.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
